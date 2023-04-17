@@ -9,7 +9,7 @@ import SingleProduct from "./pages/SingleProduct";
 import { SkeletonTheme } from "react-loading-skeleton";
 function App() {
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
       <SkeletonTheme
         baseColor="#e3e3e3"
         highlightColor="#f2f2f2"
