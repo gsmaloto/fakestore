@@ -6,9 +6,14 @@ import Login from "./pages/Login";
 import RootLayout from "./layout/RootLayout";
 import Home from "./pages/Home";
 import SingleProduct from "./pages/SingleProduct";
+import { SkeletonTheme } from "react-loading-skeleton";
 function App() {
   return (
     <div className="App">
+      <SkeletonTheme
+        baseColor="#e3e3e3"
+        highlightColor="#f2f2f2"
+      ></SkeletonTheme>
       <Routes>
         <Route path="/" element={<RootLayout />}>
           {/* index or path="/" */}
@@ -20,6 +25,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      <SkeletonTheme />
     </div>
   );
 }
