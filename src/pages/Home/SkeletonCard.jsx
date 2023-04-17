@@ -19,7 +19,10 @@ const SkeletonCard = ({ cardsCount }) => {
   return Array(cardsCount)
     .fill()
     .map((_, index) => (
-      <div className="flex flex-col items-center bg-gray-100 pt-2 w-[140px] h-[200px] md:w-[200px] md:h-[250px] cursor-pointer">
+      <div
+        key={index}
+        className="flex flex-col items-center bg-gray-100 pt-2 w-[140px] h-[200px] md:w-[200px] md:h-[250px] cursor-pointer"
+      >
         <div>
           <Skeleton
             height={windowWidth <= 768 ? 90 : 120}
