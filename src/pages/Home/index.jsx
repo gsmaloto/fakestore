@@ -6,10 +6,12 @@ import Search from "./Search";
 import { fetchProduct } from "./fetchProduct";
 import Error from "../../components/Error";
 import SkeletonCard from "./SkeletonCard";
+import useUser from "../../store/userStore";
 
 const Home = () => {
   const [foundedItem, setFoundedItem] = useState([]);
   const search = useSearchStore((state) => state.search);
+  const user = useUser((state) => state.user);
   const {
     data: products,
     error,
@@ -20,8 +22,9 @@ const Home = () => {
 
   return (
     <>
+      Username: {user?.username}
       <Search setFoundedItem={setFoundedItem} products={products} />
-      <div className="grid flex-wrap grid-cols-2 gap-2 px-2 pt-4 md:px-4 md:gap-4 xs:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:flex xl:justify-center">
+      <div className="grid flex-wrap grid-cols-2 gap-2 px-2 pt-4 md:px-4 md:gap-4 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:flex xl:justify-center">
         {/* {isLoading && "Loading......"} */}
         {isLoading && <SkeletonCard cardsCount={20} />}
 

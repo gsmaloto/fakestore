@@ -7,6 +7,7 @@ import RootLayout from "./layout/RootLayout";
 import Home from "./pages/Home";
 import SingleProduct from "./pages/SingleProduct";
 import { SkeletonTheme } from "react-loading-skeleton";
+import Practice from "./pages/Practice";
 function App() {
   return (
     <div className="App overflow-hidden">
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="cart" element="my cart" />
           <Route path="login" element={<Login />} />
+          <Route path="practice" element={<Practice />} />
           <Route path="product">
             <Route path=":productId" element={<SingleProduct />} />
           </Route>

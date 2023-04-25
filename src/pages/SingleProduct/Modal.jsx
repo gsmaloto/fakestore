@@ -17,18 +17,19 @@ const Modal = ({ setIsOpen, handleClose, image }) => {
 
   function handleClose() {
     setIsOpen(false);
+    document.body.classList.remove("overflow-hidden");
   }
   return (
     <div
       className="absolute top-0 z-[100] h-screen w-screen bg-black bg-opacity-60 pt-0 grid place-content-center"
       onClick={handleClose}
     >
-      <div className="relative">
+      <div className="relative px-4">
         <p className="text-4xl absolute top-4 right-4">
           <MdClose className="hover:text-gray-400 cursor-pointer" />
         </p>
         <div className="bg-white mx-auto grid place-items-center">
-          <img src={image} alt="" className="w-2/3" />
+          <img src={image} alt="" className="w-2/3 p-8" />
         </div>
       </div>
     </div>

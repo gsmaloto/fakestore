@@ -14,7 +14,7 @@ const SingleProduct = () => {
 
   function handleOpen() {
     setIsOpen(true);
-    console.log("modal is open");
+    document.body.classList.add("overflow-hidden");
   }
 
   const {
@@ -92,10 +92,10 @@ const SingleProduct = () => {
             />
           </div>
           <div className="flex flex-col sm:flex-row justify-end gap-4 sm:gap-8 m-8">
-            <button className="px-4 py-2 font-semibold text-gray-700 border-2 border-gray-300 hover:bg-gray-200">
+            <button className="px-4 flex-1 py-2 font-semibold text-gray-700 border-2 border-gray-300 hover:bg-gray-200">
               Add To Cart
             </button>
-            <button className="px-4 py-2 font-semibold text-white bg-red-500 hover:bg-red-300">
+            <button className="px-4 flex-1 py-2 font-semibold text-white bg-red-500 hover:bg-red-300">
               Buy Now
             </button>
           </div>

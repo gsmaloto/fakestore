@@ -21,24 +21,28 @@ const SkeletonCard = ({ cardsCount }) => {
     .map((_, index) => (
       <div
         key={index}
-        className="flex flex-col items-center bg-gray-100 pt-2 w-[140px] h-[200px] md:w-[200px] md:h-[250px] cursor-pointer"
+        className="xl:w-[200px] h-[200px] md:h-[250px] cursor-pointer bg-gray-100 hover:shadow-xl group relative"
       >
         <div>
-          <Skeleton
-            height={windowWidth <= 768 ? 90 : 120}
-            width={windowWidth <= 768 ? 120 : 170}
-          />
+          <div className="bg-white w-full h-[90px] md:h-[120px] overflow-hidden">
+            <Skeleton height={120} />
+          </div>
+
+          <h4 className="px-2 pt-2 text-sm font-semibold line-clamp-2">
+            <Skeleton width="80%" count={2} />
+          </h4>
+          <div className="flex flex-col justify-between px-4 py-2 md:flex-row">
+            <p>
+              <Skeleton width={50} />
+            </p>
+            <p className="font-bold">
+              <Skeleton width={80} />
+            </p>
+          </div>
         </div>
-        <div className="text-center">
-          <Skeleton
-            count={2}
-            height={12}
-            width={windowWidth <= 768 ? 120 : 170}
-          />
-        </div>
-        <div>
-          <Skeleton height={40} width={windowWidth <= 768 ? 120 : 170} />
-        </div>
+        <h4 className="absolute bottom-[10px] right-2 px-1 rounded text-sm md:text-md text-white">
+          <Skeleton width={50} />
+        </h4>
       </div>
     ));
 };

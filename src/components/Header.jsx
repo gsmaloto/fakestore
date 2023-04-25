@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsFillCartFill } from "react-icons/bs";
 import { RiUserFill } from "react-icons/ri";
+
 const Header = () => {
   return (
     <nav className="bg-gray-200 h-[60px] flex fixed w-screen top-0 z-50 shadow-lg">
@@ -17,7 +18,6 @@ const Header = () => {
               1
             </p>
           </span>
-          <RiUserFill className="text-xl hover:text-gray-600" />
         </div>
       </div>
     </nav>
